@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { Temparature } from './Components/Temperature';
+import Head from './Components/Head';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { Route, Switch } from 'react-router-dom';
+import { Wind } from './Components/Wind';
+import { Precipitation } from './Components/Precipitation';
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+      <Head />
+      </div>
+      <Switch>
+        <Route path="/temparature">
+          <Temparature />
+
+        </Route>
+        <Route path="/wind">
+          <Wind />
+        </Route>
+        <Route path="/precipitation">
+          <Precipitation />
+        </Route>
+      </Switch>
+     
+    
+     
+     
     </div>
   );
 }
